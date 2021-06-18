@@ -9,7 +9,8 @@ import { ViewTaskComponent } from './view-task/view-task.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-
+import { LoginComponent } from './login/login.component';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +18,13 @@ import { HeaderComponent } from './header/header.component';
     ListTasksComponent,
     ViewTaskComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

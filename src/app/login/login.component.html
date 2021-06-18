@@ -1,0 +1,8 @@
+<h3>Login</h3>
+
+<form (submit)="login()">
+  <label for="email"></label>
+  <input type="email" name="email" id="email" placeholder="Enter email"  autofocus required [(ngModel)]="email" > <br/> <br/>
+  <button class="btn btn-success">Submit</button>
+  &nbsp;<button type="reset" class="btn btn-danger">Reset</button>
+</form>
