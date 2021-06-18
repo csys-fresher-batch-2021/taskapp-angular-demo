@@ -1,0 +1,24 @@
+<h3>List Tasks</h3>
+
+<div *ngIf="tasks && tasks.length==0">
+  No records
+</div>
+
+<table class="table table-bordered">
+<thead>
+  <tr><th>Sno</th><th>Task Id</th><th>Task Name </th> <th>Status</th></tr>
+</thead>
+<tbody id="tasks-body" *ngIf="tasks">
+
+<tr *ngFor="let task of tasks; let i=index">
+  <td>{{i+1}}</td>
+  <td>{{task.id}}</td>
+  <td>{{task.name}}</td>
+  <td>{{task.status}}</td>
+  <td><a routerLink="{{task.id}}">View</a></td>
+</tr>
+</tbody>
+</table>
+
+
+

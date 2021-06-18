@@ -1,0 +1,23 @@
+<h3>View  Task  - {{taskId}}</h3>
+
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Task Id</th><th>Task Name </th> <th>Status</th></tr>
+  </thead>
+  <tbody id="tasks-body">
+
+  <tr *ngIf="task">
+
+    <td>{{task.id}}</td>
+    <td>{{task.name}}</td>
+    <td>{{task.status}}</td>
+    <td><button *ngIf="task.status=='PENDING'" type="button" class="btn btn-info" (click)="updateTask(task.id,'IN_PROGRESS')">Start</button></td>
+    <td><button *ngIf="task.status=='IN_PROGRESS'" type="button" class="btn btn-info" (click)="updateTask(task.id,'COMPLETED')">Completed</button></td>
+    <td><button *ngIf="task.status=='PENDING'" type="button" class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button></td>
+  </tr>
+  </tbody>
+  </table>
+
+
