@@ -6,3 +6,5 @@
 3. View Task
 4. Update Task Status ( PENDING to IN_PROGRESS, IN_PROGRESS to COMPLETED)
 5. Delete Task
+6. Login
+
