@@ -21,7 +21,30 @@ export class ListTasksComponent implements OnInit {
     this.taskService.getAllTasks().then(res=>{
       console.log(res);
       this.tasks = res;
+      this.searchResults = this.tasks;
     });
+  }
+
+  taskName:string = "";
+  searchResults:any=[];
+
+  search(){
+    alert(this.taskName);
+    this.searchResults = this.tasks.filter((obj:any)=> obj.name.includes(this.taskName));
+  }
+
+  getTaskColor(status:string){
+
+    let color ='';
+    if(status=='COMPLETED'){
+      color = 'badge bg-success';
+    }
+    else{
+
+      color = 'badge bg-secondary';
+    }
+    return color;
+
   }
 
 

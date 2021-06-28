@@ -4,17 +4,31 @@
   No records
 </div>
 
+<div class="row">
+<div class="col">
+
+
+  <label for="Search">Search </label>
+  <input type="text" name="taskname" [(ngModel)] ="taskName" placeholder="Enter task name" />
+  <!-- <button type="button" (click)="search()"> Search</button> -->
+
+</div>
+
+</div>
+
+{{searchResults | json}}
+
 <table class="table table-bordered">
 <thead>
   <tr><th>Sno</th><th>Task Id</th><th>Task Name </th> <th>Status</th></tr>
 </thead>
-<tbody id="tasks-body" *ngIf="tasks">
+<tbody id="tasks-body" *ngIf="searchResults">
 
-<tr *ngFor="let task of tasks; let i=index">
+<tr *ngFor="let task of searchResults | searchTask: taskName; let i=index">
   <td>{{i+1}}</td>
   <td>{{task.id}}</td>
-  <td>{{task.name}}</td>
-  <td>{{task.status}}</td>
+  <td>{{task.name }}</td>
+  <td [ngClass]="getTaskColor(task.status)">{{task.status}}</td>
   <td><a routerLink="{{task.id}}">View</a></td>
 </tr>
 </tbody>

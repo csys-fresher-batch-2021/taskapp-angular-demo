@@ -1,0 +1,23 @@
+<h4>Task Reporting</h4>
+<!-- {{taskReport | json}} -->
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Status</th> <th>Count</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let report of taskReport |keyvalue">
+      <td>{{report.key}}</td>
+      <td>{{count(report.value)}}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+<h3>Task Details</h3>
+
+{{tasks| json}}
+
+<h3> Sorted Task Details</h3>
+{{sortedData | json}}
