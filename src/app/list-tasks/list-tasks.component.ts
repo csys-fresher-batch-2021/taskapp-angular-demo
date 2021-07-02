@@ -15,8 +15,14 @@ export class ListTasksComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTasks();
+    this.loadMenus();
   }
 
+  menus:any;
+
+  loadMenus(){
+    this.menus = [ {path:'add', title:'Add Task'}, {path:'add', title:'Delete Task'}]
+  }
   loadTasks(){
     this.taskService.getAllTasks().then(res=>{
       console.log(res);

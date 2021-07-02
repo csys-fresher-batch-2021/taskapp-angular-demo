@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
 import {HttpClientModule} from '@angular/common/http';
 import { TasksModule } from './tasks/tasks.module';
 import { AuthModule } from './auth/auth.module';
+import { ThemeModule } from 'projects/theme/src/public-api';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,
+    ThemeModule,
     FormsModule,
     AuthModule,
     TasksModule,
